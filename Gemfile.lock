@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/lynndylanhurley/devise_token_auth.git
+  revision: 530b4ba71ec27502bed6721647d0fa5ac03a7389
+  specs:
+    devise_token_auth (1.1.4)
+      bcrypt (~> 3.0)
+      devise (> 3.5.2, < 5)
+      rails (>= 4.2.0, < 6.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -124,6 +133,8 @@ GEM
     puma (4.3.6)
       nio4r (~> 2.0)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -226,10 +237,12 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise (~> 4.7, >= 4.7.3)
+  devise_token_auth!
   jbuilder (~> 2.7)
   listen (~> 3.2)
   omniauth-twitter (~> 1.4)
   puma (~> 4.1)
+  rack-cors
   rails (~> 6.0.3, >= 6.0.3.4)
   sass-rails (>= 6)
   selenium-webdriver
