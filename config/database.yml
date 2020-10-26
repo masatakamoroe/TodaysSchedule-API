@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: TodaysSchedule_API_production
-  username: TodaysSchedule_API
+  username: masatakamoroe
   password: <%= ENV['TODAYSSCHEDULE_API_DATABASE_PASSWORD'] %>
