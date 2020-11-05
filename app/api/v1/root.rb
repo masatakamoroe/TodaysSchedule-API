@@ -7,8 +7,8 @@ module V1
 
     helpers GrapeDeviseTokenAuth::AuthHelpers
 
-    desc 'GET /api/v1/calendar'
-    get 'calendar' do
+    desc 'GET /api/v1/test'
+    get 'test' do
       authenticate_user!
 
       {
