@@ -5,8 +5,8 @@ module Resources
       format :json
       content_type :json, 'application/json'
 
-      mount Resources::V1::Users
-      mount Resources::V1::Calendars
+      mount Resources::V1::User
+      mount Resources::V1::Calendar
     end
   end
 end

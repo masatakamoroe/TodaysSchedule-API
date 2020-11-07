@@ -11,8 +11,6 @@ module TodaysScheduleApi
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     # app/api以下のrbファイルをautoload
-    config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
-    config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
     #config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
     #config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
     # Settings in config/environments/* take precedence over those specified here.

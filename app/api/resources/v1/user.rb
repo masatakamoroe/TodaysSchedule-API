@@ -1,6 +1,6 @@
 module Resources
   module V1
-    class Users < Grape::API
+    class User < Grape::API
       resource :users do
         # http://localhost:3000/api/v1/users
         desc 'user list'

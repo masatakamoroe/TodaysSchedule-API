@@ -1,7 +1,7 @@
 module Resources
   module V1
-    class Calendars < Grape::API
-      resource :Calendars do
+    class Calendar < Grape::API
+      resource :calendars do
         # http://localhost:3000/api/v1/users
         desc 'calendar list'
         get do
