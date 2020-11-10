@@ -2,10 +2,11 @@ module Resources
   module V1
     class Calendar < Grape::API
       resource :calendars do
-        # http://localhost:3000/api/v1/users
+        # http://localhost:3000/api/v1/calendars
         desc 'calendar list'
         get do
-          present Calendar.all
+        @calendars = ::Carendar.all
+          present @Calendars
         end
 
         # http://localhost:3000/api/v1/calendars/{:id}

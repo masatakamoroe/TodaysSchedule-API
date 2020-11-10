@@ -4,8 +4,9 @@ module Resources
       resource :users do
         # http://localhost:3000/api/v1/users
         desc 'user list'
-        get do
-          present User.all
+        get '/users'do
+        @users = ::User.all
+          present @users
         end
 
         # http://localhost:3000/api/v1/users/{:id}
