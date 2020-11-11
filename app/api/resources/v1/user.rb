@@ -4,9 +4,9 @@ module Resources
       resource :users do
         # http://localhost:3000/api/v1/users
         desc 'user list'
-        get '/users'do
+        get do
         @users = ::User.all
-          present @users
+          present @users, with: Entities::V1::UserEntity
         end
 
         # http://localhost:3000/api/v1/users/{:id}
@@ -16,10 +16,13 @@ module Resources
           # 必須項目
           requires :id, type: Integer, desc: 'user id'
         end
-        get ':id' do
-          present User.find(params[:id])
+        get '/:id' do
+          @users = ::User.all
+          @id = @users.find(params[:id])
+          present @users.find(params[:id]), with: Entities::V1::UserEntity
+          
+        end
         end
       end
     end
   end
-end

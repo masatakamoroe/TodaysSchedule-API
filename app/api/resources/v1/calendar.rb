@@ -5,8 +5,8 @@ module Resources
         # http://localhost:3000/api/v1/calendars
         desc 'calendar list'
         get do
-        @calendars = ::Carendar.all
-          present @Calendars
+        @calendars = ::Calendar.all
+          present @calendars, with: Entities::V1::CalendarEntity
         end
 
         # http://localhost:3000/api/v1/calendars/{:id}
@@ -16,10 +16,12 @@ module Resources
           # 必須項目
           requires :id, type: Integer, desc: 'calendar id'
         end
-        get ':id' do
-          present Calendar.find(params[:id])
+        get '/:id' do
+          @calendars = ::Calendar.all
+          @id = @calendars.find(params[:id])
+          present @calendars.find(params[:id]), with: Entities::V1::CalendarEntity
         end
+      end
       end
     end
   end
-end
