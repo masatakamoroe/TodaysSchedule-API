@@ -5,8 +5,9 @@ module Resources
         # http://localhost:3000/api/v1/calendars
         desc 'calendar list'
         get do
-        @calendars = ::Calendar.all
+          @calendars = ::Calendar.all
           present @calendars, with: Entities::V1::CalendarEntity
+
         end
 
         # http://localhost:3000/api/v1/calendars/{:id}
@@ -20,8 +21,18 @@ module Resources
           @calendars = ::Calendar.all
           @id = @calendars.find(params[:id])
           present @calendars.find(params[:id]), with: Entities::V1::CalendarEntity
+
+          desc 'GET /api/v1/calendars'
+          get 'calendars' do
+            authenticate_user!
+            {
+              message: 'test',
+              current_user_uid: current_user.uid,
+              authenticated?: authenticated?,
+            }
+          end
         end
-      end
       end
     end
   end
+end

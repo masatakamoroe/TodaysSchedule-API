@@ -1,4 +1,6 @@
 class API < Grape::API
-#  prefix:api
+  GrapeDeviseTokenAuth.setup! do |config|
+      config.authenticate_all = false
+    end
   mount Resources::V1::Root
 end
