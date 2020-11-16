@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 # api
 gem 'grape'
+gem 'grape-entity'
+gem 'grape_devise_token_auth'
 # devise関連
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth'

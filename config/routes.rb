@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  namespace :api do
-    namespace 'v1' do
-    mount_devise_token_auth_for 'User', at: '/users'
-    mount API => '/'
-    end
+    mount_devise_token_auth_for 'Calendar', at: '/calendars'
+    mount API => '/api'
+
   end
-end
