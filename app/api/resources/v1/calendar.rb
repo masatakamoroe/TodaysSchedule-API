@@ -3,8 +3,7 @@ module Resources
     class Calendar < Grape::API
       auth :grape_devise_token_auth, resource_class: :user
       helpers GrapeDeviseTokenAuth::AuthHelpers
-
-     resource :calendars do
+      resource :calendars do
         # http://localhost:3000/api/v1/calendars
         desc 'calendar list'
         get do
