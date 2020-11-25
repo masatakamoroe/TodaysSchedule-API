@@ -130,6 +130,9 @@ GEM
       devise (>= 3.3)
       devise_token_auth (>= 0.1.32)
       grape (> 0.9.0)
+    grape_logging (1.8.4)
+      grape
+      rack
     hashie (4.1.0)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
@@ -285,6 +288,7 @@ DEPENDENCIES
   grape
   grape-entity
   grape_devise_token_auth
+  grape_logging
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mysql2 (~> 0.5.3)
