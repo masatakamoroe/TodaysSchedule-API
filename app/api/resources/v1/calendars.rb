@@ -21,7 +21,7 @@ module Resources
         post do
           authenticate_user!
           Calendar.create({
-            user_id: params[:user_id],
+            user_id: params[:user_id] = current_user.id,
             title: params[:title],
             date: params[:date],
             })
