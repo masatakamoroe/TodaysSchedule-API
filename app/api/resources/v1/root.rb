@@ -4,7 +4,7 @@ module Resources
       version 'v1', using: :path
       format :json
       content_type :json, 'application/json'
-      mount Resources::V1::Calendar
+      mount Resources::V1::Calendars
     end
   end
 end

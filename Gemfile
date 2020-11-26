@@ -10,6 +10,7 @@ gem 'grape_devise_token_auth'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth'
 
+gem 'grape_logging'
 # CORS設定
 gem 'rack-cors'
 gem 'omniauth-twitter', '~> 1.4'
