@@ -13,15 +13,13 @@ module Resources
 
         desc "create new calendar"
         params do
-          requires :user_id, type: Integer
           requires :title, type: String
           requires :date, type: DateTime
         end
 
         post do
           authenticate_user!
-          Calendar.create({
-            user_id: params[:user_id] = current_user.id,
+          current_user.calendars.create({
             title: params[:title],
             date: params[:date],
             })
