@@ -9,7 +9,12 @@
 # And be sure to use new-style password hashing:
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
-default: &default
+postgres: &postgres
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+mysql: &mysql
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -18,14 +23,14 @@ default: &default
   host: localhost
 
 development:
-  <<: *default
+  <<: *mysql
   database: TodaysSchedule_API_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
+  <<: *mysql
   database: TodaysSchedule_API_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
@@ -48,7 +53,8 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  <<: *postgres
+  url: <%= ENV['postgres://rlurprgbganrcn:488f43fb37eeb27e1c385b7a268675cf7e31135eabacac40f9eefe86b4ae991b@ec2-52-71-153-228.compute-1.amazonaws.com:5432/dk18gje2id8uo'] %>
   database: TodaysSchedule_API_production
   username: <%= ENV['TODAYSSCHEDULE_API_DATABASE_USER'] %>
   password: <%= ENV['TODAYSSCHEDULE_API_DATABASE_PASSWORD'] %>
