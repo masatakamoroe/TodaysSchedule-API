@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '2.7.2'
 # api
 gem 'grape'
 gem 'grape-entity'
 gem 'grape_devise_token_auth'
 # devise関連
-gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'devise', git: "https://github.com/heartcombo/devise"
 gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth'
 
 gem 'grape_logging'
